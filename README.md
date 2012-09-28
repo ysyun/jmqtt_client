@@ -1,9 +1,10 @@
-JMQTT Client for Library Usage
+JMQTT Client Library Usage
 ===
 
 # Files
     1. jmqtt_client-1.0.jar
     2. jmqtt.client.properties
+    * This library imports the paho client package for mqtt.
      
 # API
     <IPublish.java>
@@ -67,8 +68,37 @@ JMQTT Client for Library Usage
     and then you can see "hidowon" like this message in Sub console
 
 # MqttServiceMain Example
+    1. MqttCallback interface 상속받아 구현(implementation)
+        연결 유실 콜백 : public void connectionLost(Throwable cause);
+        Publish 메세지 송신 결과   : public void deliveryComplete(MqttDeliveryToken token);
+        Subscribe 메세지 수신 결과 : public void messageArrived(MqttTopic topic, MqttMessage message)throws MqttException;
     
+    2. Subscribe 호출
+        ISubscribe sub = null;
+    	try{
+			sub = new SubscribeContext("service.sub", this);
+			sub.connect();
+			sub.subscribe(topicName);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(sub != null)
+				try{ sub.disconnect(); } catch(Exception e){}
+		}
 
+    3. Publish 호출 
+        try{
+			IPublish pub = new PublishContext("service.pub", this);
+			pub.publish(topicName, msg);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
     
+# Adaptation in your application
+    1. MqttCallback interface 상속받아 구현(implementation)
+    2. use ISubscribe interface
+    3. use IPublish interface
+    * check the sources for details
     
+# Thanks for reading this manual 2012.09.28 by yun dowon
     
