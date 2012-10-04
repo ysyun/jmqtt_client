@@ -49,10 +49,10 @@ JMQTT Client Library Usage
 # Testing
     <SUBSCRIBE>
     * Usage
-    1. open new cmd console window (Sub console)
+    1. open new cmd console window (Subscribe console)
     2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub <topicName>
     
-    * Example in Sub console
+    * Example in Subscribe console
     java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub a/b/c
     Connected to tcp://xxx.xxx.xxx.xxx:1883
     Subscribing to topic "a/b/c" qos 2
@@ -60,10 +60,10 @@ JMQTT Client Library Usage
     
     <PUBLISH>
     * Usage
-    1. open new cmd console window (Pub console)
+    1. open new cmd console window (Publish console)
     2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub <topicName> <Message>
     
-    *Example in Pub console
+    * Example in Publish console
     java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub a/b/c hidowon
     Connected to tcp://xxx.xxx.xxx.xxx:1883
     Publishing at: 13488232283200 to topic "a/b/c" qos 2
