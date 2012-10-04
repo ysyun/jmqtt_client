@@ -105,5 +105,5 @@ JMQTT Client Library Usage
     3. use IPublish interface
     * check the sources for details
     
-# Thanks for reading this manual written by yun youngsik(dowon)
+>> Thanks for reading this manual written by yun youngsik(dowon)
     
