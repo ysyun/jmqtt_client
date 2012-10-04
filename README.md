@@ -7,16 +7,21 @@ JMQTT Client Library Usage
     * This library imports the paho client package for mqtt.
      
 # API
-    <IPublish.java>
-    public void publish(String topicName, String message) throws MqttException;
+    <IPublish.java> interface class
+    토픽(key)와 전송하려는 메세지를 전달한다
+      public void publish(String topicName, String message) throws MqttException;
     
-    <ISubscribe.java>
-    public void connect() throws MqttException;
-    public void subscribe(String topicName) throws MqttException;
-    public void disconnect() throws MqttException;
+    <ISubscribe.java> interface class
+    MQTT Broker에 연결한다. 연결 정보는 properties 파일 설정값을 참조함 
+      public void connect() throws MqttException;
+    받아 보길 원하는 토픽(key)을 등록한다.
+      public void subscribe(String topicName) throws MqttException;
+    MQTT Broker로부터 연결을 끊는다.
+      public void disconnect() throws MqttException;
     
 # Config
     <jmqtt.client.properties>
+    환경설정 파일 : -D옵션을 주거나 jmqtt_client-1.0.jar 파일의 root에 있으면 됨
     # JMQTT broker server ip:port
     # default value ip 127.0.0.1, port 1883
     #jmqtt.broker.ip=222.231.25.95
@@ -24,7 +29,7 @@ JMQTT Client Library Usage
     jmqtt.broker.port=1883
 
     # id/password realm 파일을 별도 작성해야 함
-    # default is false 
+    # 적용여부 default is false 
     jmqtt.client.auth.enable=false
     jmqtt.broker.connect.id=jmqtt-client
     jmqtt.broker.connect.pwd=jmqtt-client-12345
@@ -36,9 +41,9 @@ JMQTT Client Library Usage
     jmqtt.client.connect.timeout=6000
 
     # publish Quality of Service (QoS)
-    # level 0 : at most once - 한번이 갈 수도 않갈 수도 있음 (상호체크 없음)
-    # level 1 : at least once - 한번이나 두번 중복해서 갈 수도 있음 (상호체크 1회) 
-    # level 2 : confirm once - 반드시 한번만 감 (상호체크 2회)
+    # level 0 : at most once - 메세지가 한번이 갈 수도 않갈 수도 있음 (상호체크 없음)
+    # level 1 : at least once - 메세지가 한번이나 두번 중복해서 갈 수도 있음 (상호체크 1회) 
+    # level 2 : confirm once - 반드시 한번만 메세지가 전달됨 (상호체크 2회)
     jmqtt.qos.level=2
     
 # Testing
