@@ -49,28 +49,28 @@ JMQTT Client Library Usage
 # Testing
     <SUBSCRIBE>
     * Usage
-    1. open new cmd console window (Subscribe console)
-    2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub <topicName>
+     1. open new cmd console window (Subscribe console)
+     2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub <topicName>
     
     * Example in Subscribe console
-    java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub a/b/c
-    Connected to tcp://xxx.xxx.xxx.xxx:1883
-    Subscribing to topic "a/b/c" qos 2
-    Press <Enter> to exit
+     java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain sub a/b/c
+     Connected to tcp://xxx.xxx.xxx.xxx:1883
+     Subscribing to topic "a/b/c" qos 2
+     Press <Enter> to exit
     
     <PUBLISH>
     * Usage
-    1. open new cmd console window (Publish console)
-    2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub <topicName> <Message>
+     1. open new cmd console window (Publish console)
+     2. java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub <topicName> <Message>
     
     * Example in Publish console
-    java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub a/b/c hidowon
-    Connected to tcp://xxx.xxx.xxx.xxx:1883
-    Publishing at: 13488232283200 to topic "a/b/c" qos 2
-    Disconnected
+     java -classpath jmqtt_client-1.0.jar -Djmqtt.config=c:/jmqtt.client.properties MqttServiceMain pub a/b/c hidowon
+     Connected to tcp://xxx.xxx.xxx.xxx:1883
+     Publishing at: 13488232283200 to topic "a/b/c" qos 2
+     Disconnected
     
-    ....
-    and then you can see "hidowon" like this message in Sub console
+     ....
+     and then you can see "hidowon" like this message in Sub console
 
 # MqttServiceMain Example
     1. MqttCallback interface 상속받아 구현(implementation)
