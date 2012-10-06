@@ -8,15 +8,15 @@ JMQTT Client Library Usage
      
 # API
     <IPublish.java> interface class
-    토픽(key)와 전송하려는 메세지를 전달한다
+    * 토픽(key)와 전송하려는 메세지를 전달한다
       public void publish(String topicName, String message) throws MqttException;
     
     <ISubscribe.java> interface class
-    MQTT Broker에 연결한다. 연결 정보는 properties 파일 설정값을 참조함 
+    * MQTT Broker에 연결한다. 연결 정보는 properties 파일 설정값을 참조함 
       public void connect() throws MqttException;
-    받아 보길 원하는 토픽(key)을 등록한다.
+    * 받아 보길 원하는 토픽(key)을 등록한다.
       public void subscribe(String topicName) throws MqttException;
-    MQTT Broker로부터 연결을 끊는다.
+    * MQTT Broker로부터 연결을 끊는다.
       public void disconnect() throws MqttException;
     
 # Config
