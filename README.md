@@ -106,5 +106,5 @@ JMQTT Client Library Usage
     * check the sources for details
     
     
-  Thanks for reading this manual written by yun youngsik(dowon)
+  Thanks for reading this manual written by yun youngsik(dowon). 2012
     
